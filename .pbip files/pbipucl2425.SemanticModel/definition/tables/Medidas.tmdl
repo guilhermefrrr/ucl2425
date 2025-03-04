@@ -1,0 +1,359 @@
+table Medidas
+	lineageTag: 213a1af1-3374-424e-a6c0-d8293cbe05f6
+
+	measure xG/Match =
+			
+			DIVIDE(
+			    SUM(ucl2425[xG]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+		lineageTag: ee0a7d1a-241e-4774-84f9-3231e3881f8d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tot_Touches_Att 3rd' = ```
+			
+			 CALCULATE(
+			     SUM(ucl2425[Touches_Att 3rd]),
+			     ALLEXCEPT(ucl2425, ucl2425[Match_ID]) 
+			 )
+			```
+		formatString: 0
+		lineageTag: 30cd6374-c261-4425-ac5d-f1412f842657
+
+	measure 'Squad_Touches_Att 3rd' = ```
+			
+			 CALCULATE(
+			     SUM(ucl2425[Touches_Att 3rd]),
+			     ALLEXCEPT(ucl2425, ucl2425[Touches_Att 3rd], ucl2425[Squad])
+			 )
+			```
+		formatString: 0
+		lineageTag: 5de5ad17-a7d0-4aaa-9aba-77e484782c8b
+
+	measure 'Field Tilt' = ```
+			
+			 DIVIDE(
+			     [Squad_Touches_Att 3rd],
+			     [Tot_Touches_Att 3rd],
+			     0
+			 )
+			```
+		lineageTag: 413658ed-2c20-4b0b-a3f6-c10c949b61b6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Gls/Match = ```
+			
+			DIVIDE(
+			    SUM(ucl2425[Gls]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+			
+			```
+		lineageTag: a2edf424-04ad-45f9-a695-65a6f2e1c6fa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Passes_Cmp/Match = ```
+			
+			DIVIDE(
+			    SUM(ucl2425[Passes_Cmp]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+			
+			```
+		lineageTag: 385f4c22-904c-42cb-9373-55b5639c679e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure xA/Match =
+			
+			DIVIDE(
+			    SUM(ucl2425[xA]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+		lineageTag: 56e1b88f-3bf8-4bc7-8cb5-df7220021d9d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Fls/Match =
+			
+			DIVIDE(
+			    SUM(ucl2425[Fls]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+		lineageTag: 37544adf-d6b9-46b1-9ca0-899e738df83d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Sh/Match =
+			
+			DIVIDE(
+			    SUM(ucl2425[Sh]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+		lineageTag: 12a1c18e-1fa6-4012-b51b-f978209ee0fa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Ast/Match =
+			
+			DIVIDE(
+			    SUM(ucl2425[Ast]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+		lineageTag: 0444a02e-4bd9-4fa6-8f78-1aba00c372f6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PPA/Match =
+			
+			DIVIDE(
+			    SUM(ucl2425[PPA]),
+			    DISTINCTCOUNT(ucl2425[Match_ID])
+			)
+		lineageTag: f24a2d2c-d13a-44fa-a598-afaaf7112336
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Passes_Cmp/Gls =
+			
+			DIVIDE(
+			    SUM(ucl2425[Passes_Cmp]),
+			    SUM(ucl2425[Gls])
+			)
+		lineageTag: ae6ff015-d7b3-4fb2-b0be-f7af91376c38
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Passes_Cmp/Sh =
+			
+			DIVIDE(
+			    SUM(ucl2425[Passes_Cmp]),
+			    SUM(ucl2425[Sh])
+			)
+		lineageTag: 92674e9f-4b2a-41d3-8353-3e95bf70894c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Touches_Att 3rd/Touches' =
+			
+			DIVIDE(
+			    SUM(ucl2425[Touches_Att 3rd]),
+			    SUM(ucl2425[Touches])
+			) * 100
+		lineageTag: af76a56f-a5ec-485c-9554-32f61dc4f097
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Touches_Def 3rd/Touches' =
+			
+			DIVIDE(
+			    SUM(ucl2425[Touches_Def 3rd]),
+			    SUM(ucl2425[Touches])
+			) * 100
+		lineageTag: 23fc6ce8-d802-40be-baca-15b70037348d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Touches_Mid 3rd/Touches' =
+			
+			DIVIDE(
+			    SUM(ucl2425[Touches_Mid 3rd]),
+			    SUM(ucl2425[Touches])
+			) * 100
+		lineageTag: f7a0ccf5-3411-437a-8c09-3b4222867c63
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Long_Cmp/Passes_Cmp =
+			
+			DIVIDE(
+			    SUM(ucl2425[Long_Cmp]),
+			    SUM(ucl2425[Passes_Cmp])
+			) * 100
+		lineageTag: e99be124-dae0-49c7-9364-622330e9701a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Short_Cmp/Passes_Cmp =
+			
+			DIVIDE(
+			    SUM(ucl2425[Short_Cmp]),
+			    SUM(ucl2425[Passes_Cmp])
+			) * 100
+		lineageTag: 38d56637-05ff-4d30-b3b9-d019952f503b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Take-Ons_Succ/Take-Ons_Att =
+			
+			DIVIDE(
+			    SUM(ucl2425[Take-Ons_Succ]),
+			    SUM(ucl2425[Take-Ons_Att])
+			) * 100
+		lineageTag: a21e1289-0ff7-4bfa-9ded-84edf9ec9fba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tkl_Att 3rd/Tkl' =
+			
+			DIVIDE(
+			    SUM(ucl2425[Tackles_Att 3rd]),
+			    SUM(ucl2425[Tkl])
+			) * 100
+		lineageTag: 02da1fc4-6da4-4ebd-b59a-dca11f5015b4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Tkl_Def 3rd/Tkl' =
+			
+			DIVIDE(
+			    SUM(ucl2425[Tackles_Def 3rd]),
+			    SUM(ucl2425[Tkl])
+			) * 100
+		lineageTag: 214ce18c-96b3-4843-bec0-2c4f8b292afe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Aerial Duels%' = ```
+			
+			DIVIDE(
+			    SUM(ucl2425[Aerial Duels_Won]),
+			    SUM(ucl2425[Aerial Duels_Total])
+			) * 100
+			
+			```
+		lineageTag: f4ff3b65-ca16-4caf-a8da-39c303929495
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sum Aerials' = SUM(ucl2425[Aerial Duels_Total])
+		formatString: 0
+		lineageTag: 952bbb10-0899-4070-8086-59c91d76e3d0
+
+	measure teste = GROUPBY(ucl2425, ucl2425[Player])
+		lineageTag: 0be555c1-1602-4ae3-8023-9ca5cbc988f2
+
+	measure SelectedStat = ```
+			
+			SWITCH(
+			    SELECTEDVALUE(Categories[Category]),
+			    "Passes into final third", SUM(ucl2425[1/3]),
+			    "Aerial duels won", SUM(ucl2425[Aerial Duels_Won]),
+			    "Assists", SUM(ucl2425[Ast]),
+			    "Blocks", SUM(ucl2425[Blocks]),
+			    "Carries into penalty area", SUM(ucl2425[Carries_CPA]),
+			    "Dispossessed", SUM(ucl2425[Carries_Dis]),
+			    "Progressive carries", SUM(ucl2425[Carries_PrgC]),
+			    "Clearances", SUM(ucl2425[Clr]),
+			    "Red cards", SUM(ucl2425[CrdR]),
+			    "Yellow cards", SUM(ucl2425[CrdY]),
+			    "Crosses", SUM(ucl2425[Crs]),
+			    "Errors leading to shot", SUM(ucl2425[Err]),
+			    "Fouls drawn", SUM(ucl2425[Fld]),
+			    "Fouls committed", SUM(ucl2425[Fls]),
+			    "Goal-creating actions", SUM(ucl2425[GCA]),
+			    "Goals", SUM(ucl2425[Gls]),
+			    "Interceptions", SUM(ucl2425[Int]),
+			    "Key passes", SUM(ucl2425[KP]),
+			    "Long passes completed", SUM(ucl2425[Long_Cmp]),
+			    "Non-penalty xG", SUM(ucl2425[npxG]),
+			    "Offsides", SUM(ucl2425[Off]),
+			    "Own goals", SUM(ucl2425[OG]),
+			    "Through balls", SUM(ucl2425[Pass Types_TB]),
+			    "Passes completed", SUM(ucl2425[Passes_Cmp]),
+			    "Progressive passes", SUM(ucl2425[Passes_PrgP]),
+			    "Passes into penalty area", SUM(ucl2425[PPA]),
+			    "Progressive passes received", SUM(ucl2425[PrgR]),
+			    "Shot-creating actions", SUM(ucl2425[SCA]),
+			    "Shots", SUM(ucl2425[Sh]),
+			    "Shots on target", SUM(ucl2425[SoT]),
+			    "Tackles (att 3rd)", SUM(ucl2425[Tackles_Att 3rd]),
+			    "Successful take-ons", SUM(ucl2425[Take-Ons_Succ]),
+			    "Tackles", SUM(ucl2425[Tkl]),
+			    "Touches (att pen)", SUM(ucl2425[Touches_Att Pen]),
+			    "Touches (def pen)", SUM(ucl2425[Touches_Def Pen]),
+			    "xA", SUM(ucl2425[xA]),
+			    "xG", SUM(ucl2425[xG]),
+			    BLANK()
+			)
+			
+			```
+		lineageTag: d7272b05-33a8-4252-b6a3-48c9bf6e691b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelectedStatAvg =
+			
+			SWITCH(
+			    SELECTEDVALUE(Categories[Category]),
+			    "Passes into final third", SUM(ucl2425[1/3]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Aerial duels won", SUM(ucl2425[Aerial Duels_Won]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Assists", SUM(ucl2425[Ast]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Blocks", SUM(ucl2425[Blocks]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Carries into penalty area", SUM(ucl2425[Carries_CPA]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Dispossessed", SUM(ucl2425[Carries_Dis]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Progressive carries", SUM(ucl2425[Carries_PrgC]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Clearances", SUM(ucl2425[Clr]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Red cards", SUM(ucl2425[CrdR]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Yellow cards", SUM(ucl2425[CrdY]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Crosses", SUM(ucl2425[Crs]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Errors leading to shot", SUM(ucl2425[Err]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Fouls drawn", SUM(ucl2425[Fld]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Fouls committed", SUM(ucl2425[Fls]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Goal-creating actions", SUM(ucl2425[GCA]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Goals", SUM(ucl2425[Gls]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Interceptions", SUM(ucl2425[Int]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Key passes", SUM(ucl2425[KP]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Long passes completed", SUM(ucl2425[Long_Cmp]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Non-penalty xG", SUM(ucl2425[npxG]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Offsides", SUM(ucl2425[Off]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Own goals", SUM(ucl2425[OG]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Through balls", SUM(ucl2425[Pass Types_TB]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Passes completed", SUM(ucl2425[Passes_Cmp]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Progressive passes", SUM(ucl2425[Passes_PrgP]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Passes into penalty area", SUM(ucl2425[PPA]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Progressive passes received", SUM(ucl2425[PrgR]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Shot-creating actions", SUM(ucl2425[SCA]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Shots", SUM(ucl2425[Sh]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Shots on target", SUM(ucl2425[SoT]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Tackles (att 3rd)", SUM(ucl2425[Tackles_Att 3rd]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Successful take-ons", SUM(ucl2425[Take-Ons_Succ]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Tackles", SUM(ucl2425[Tkl]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Touches (att pen)", SUM(ucl2425[Touches_Att Pen]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "Touches (def pen)", SUM(ucl2425[Touches_Def Pen]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "xA", SUM(ucl2425[xA]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    "xG", SUM(ucl2425[xG]) / DISTINCTCOUNT(ucl2425[Match_ID]),
+			    BLANK()
+			)
+		lineageTag: 60a6209f-a446-4a5b-ab03-b29719f1d0ac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SoT/Sh =
+			
+			DIVIDE(
+			    SUM(ucl2425[SoT]),
+			    SUM(ucl2425[Sh])
+			) * 100
+		lineageTag: 89974ae7-1dd8-404a-928d-72365e20a5e1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		formatString: 0
+		lineageTag: 3620a6c1-5a8c-43eb-8854-c673f9c798c7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 9942de86404e4b889de899e5d3e95d12
+

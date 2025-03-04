@@ -1,0 +1,157 @@
+table fixturesucl2425
+	lineageTag: 179b1e8b-5912-4e9c-a595-d1fe63fb8cf5
+
+	column Round
+		dataType: string
+		lineageTag: ce8eca95-37af-4387-afc8-079944b7cd4a
+		summarizeBy: none
+		sourceColumn: Round
+
+		annotation SummarizationSetBy = Automatic
+
+	column MD
+		dataType: int64
+		formatString: 0
+		lineageTag: 3860b49a-25b9-416d-aef8-c9dca942c77c
+		summarizeBy: sum
+		sourceColumn: MD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Match_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 25a5a563-7366-4a82-8309-eda7085be833
+		summarizeBy: none
+		sourceColumn: Match_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: string
+		lineageTag: 7d84eb07-8bec-4894-8c2a-7d6011a70bca
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e203f38c-984b-4982-b0e7-19c1ec66b635
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: a745a307-9a43-4059-8a82-b5bf823f96df
+			defaultHierarchy: LocalDateTable_d14e47e0-3666-4213-b0d8-e8ce072c8bff.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 0b747d33-39a0-4a7e-8d93-2dcdeacfc0a7
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column Home
+		dataType: string
+		lineageTag: ddc50b1e-f828-4975-9a45-06d85988f5ac
+		summarizeBy: none
+		sourceColumn: Home
+
+		annotation SummarizationSetBy = Automatic
+
+	column xG_Home
+		dataType: double
+		lineageTag: 14df28a3-d2f6-4014-bbc8-39f018a34d5b
+		summarizeBy: sum
+		sourceColumn: xG_Home
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Score_Home
+		dataType: int64
+		formatString: 0
+		lineageTag: adea887c-1b63-467c-8155-3fa436779761
+		summarizeBy: sum
+		sourceColumn: Score_Home
+
+		annotation SummarizationSetBy = Automatic
+
+	column Score_Away
+		dataType: int64
+		formatString: 0
+		lineageTag: 698660b1-2df2-4205-a2e7-6272af89e45d
+		summarizeBy: sum
+		sourceColumn: Score_Away
+
+		annotation SummarizationSetBy = Automatic
+
+	column xG_Away
+		dataType: double
+		lineageTag: 1bc78519-c17d-4732-b703-aedac4a984b4
+		summarizeBy: sum
+		sourceColumn: xG_Away
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Away
+		dataType: string
+		lineageTag: 5132efe8-3b86-4de3-8960-818c273f7bc0
+		summarizeBy: none
+		sourceColumn: Away
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attendance
+		dataType: int64
+		formatString: 0
+		lineageTag: 0097779c-7d04-4de9-9d3d-9251698422f4
+		summarizeBy: sum
+		sourceColumn: Attendance
+
+		annotation SummarizationSetBy = Automatic
+
+	column Venue
+		dataType: string
+		lineageTag: 594b83c1-156e-4a90-a46f-4be1c9a4c7a9
+		summarizeBy: none
+		sourceColumn: Venue
+
+		annotation SummarizationSetBy = Automatic
+
+	column Referee
+		dataType: string
+		lineageTag: b95c7992-4d05-4160-bd3e-2f12361b380b
+		summarizeBy: none
+		sourceColumn: Referee
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fixturesucl2425 = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("G:\Meu Drive\Dados\Projetos\UCL_2425\fixturesucl2425.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Round", type text}, {"MD", Int64.Type}, {"Match_ID", Int64.Type}, {"Day", type text}, {"Date", type date}, {"Time", type time}, {"Home", type text}, {"xG_Home", type number}, {"Score_Home", Int64.Type}, {"Score_Away", Int64.Type}, {"xG_Away", type number}, {"Away", type text}, {"Attendance", Int64.Type}, {"Venue", type text}, {"Referee", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

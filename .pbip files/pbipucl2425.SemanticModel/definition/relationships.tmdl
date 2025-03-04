@@ -1,0 +1,21 @@
+relationship a745a307-9a43-4059-8a82-b5bf823f96df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: fixturesucl2425.Date
+	toColumn: LocalDateTable_d14e47e0-3666-4213-b0d8-e8ce072c8bff.Date
+
+relationship AutoDetected_ff3a4fa2-e5b9-41a7-a4e9-5bb0cc485e95
+	fromColumn: ucl2425.Match_ID
+	toColumn: fixturesucl2425.Match_ID
+
+relationship AutoDetected_b9f7b915-c1fc-428e-a8fc-30d71d807b28
+	fromColumn: fieldtiltucl2425.Match_ID
+	toColumn: fixturesucl2425.Match_ID
+
+relationship AutoDetected_ab74d04a-83e9-4a20-8613-0e62ce795861
+	fromColumn: ucl2425_squad_or_vs.MD
+	toColumn: MDs.MD
+
+relationship AutoDetected_e46678a6-4307-46bb-9862-fdf84c1b1e3a
+	fromColumn: ucl2425_squad_or_vs.Match_ID
+	toColumn: fixturesucl2425.Match_ID
+

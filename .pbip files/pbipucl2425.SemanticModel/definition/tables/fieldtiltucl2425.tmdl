@@ -1,0 +1,97 @@
+table fieldtiltucl2425
+	lineageTag: 99d18978-d024-4b77-9941-3459f8048620
+
+	column Match_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: aa933986-e935-4540-84e1-32a7ff56b851
+		summarizeBy: none
+		sourceColumn: Match_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Squad
+		dataType: string
+		lineageTag: 50bc38c4-451a-4fcc-8398-98fa546e987e
+		summarizeBy: none
+		sourceColumn: Squad
+
+		annotation SummarizationSetBy = Automatic
+
+	column MD
+		dataType: int64
+		formatString: 0
+		lineageTag: ec669f90-8ce7-4ac3-bd6c-fd92c4edbd48
+		summarizeBy: sum
+		sourceColumn: MD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Touches_Att 3rd'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e479406-96c5-4b8a-b114-0073ea870ccd
+		summarizeBy: sum
+		sourceColumn: Touches_Att 3rd
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total_Touches_Att 3rd'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f5d952f-7850-4b82-ad76-a4dc842f8706
+		summarizeBy: sum
+		sourceColumn: Total_Touches_Att 3rd
+
+		annotation SummarizationSetBy = Automatic
+
+	column Field_Tilt%
+		dataType: double
+		lineageTag: 209af2a4-9efc-4f5a-a616-5f6068cd08b5
+		summarizeBy: sum
+		sourceColumn: Field_Tilt%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cum_Touches_Att 3rd'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f60eb83-8ca2-4c2e-ad4a-4c27e302a33d
+		summarizeBy: sum
+		sourceColumn: Cum_Touches_Att 3rd
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cum_Total_Touches_Att 3rd'
+		dataType: int64
+		formatString: 0
+		lineageTag: d7758bac-1a10-4e34-9007-b08a953dabd9
+		summarizeBy: sum
+		sourceColumn: Cum_Total_Touches_Att 3rd
+
+		annotation SummarizationSetBy = Automatic
+
+	column Field_Tilt_Over_Matches%
+		dataType: double
+		lineageTag: 77a60b73-aa9e-4985-a366-f85fb95ec2fe
+		summarizeBy: sum
+		sourceColumn: Field_Tilt_Over_Matches%
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fieldtiltucl2425 = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("G:\Meu Drive\Dados\Projetos\UCL_2425\fieldtiltucl2425.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Match_ID", Int64.Type}, {"Squad", type text}, {"MD", Int64.Type}, {"Touches_Att 3rd", Int64.Type}, {"Total_Touches_Att 3rd", Int64.Type}, {"Field_Tilt%", type number}, {"Cum_Touches_Att 3rd", Int64.Type}, {"Cum_Total_Touches_Att 3rd", Int64.Type}, {"Field_Tilt_Over_Matches%", type number}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

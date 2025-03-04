@@ -1,0 +1,59 @@
+table Categories
+	lineageTag: af02ba3b-4a01-4206-bdb7-1f8710f6fc2b
+
+	column Category
+		lineageTag: 1676c4bb-21d7-4cfb-9c85-38b3bd8d0632
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Category]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Categories = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "Category", STRING,
+				    {
+				        {"Passes into final third"},
+				        {"Aerial duels won"},
+				        {"Assists"},
+				        {"Blocks"},
+				        {"Carries into penalty area"},
+				        {"Dispossessed"},
+				        {"Progressive carries"},
+				        {"Clearances"},
+				        {"Red cards"},
+				        {"Yellow cards"},
+				        {"Crosses"},
+				        {"Errors leading to shot"},
+				        {"Fouls drawn"},
+				        {"Fouls committed"},
+				        {"Goal-creating actions"},
+				        {"Goals"},
+				        {"Interceptions"},
+				        {"Key passes"},
+				        {"Long passes completed"},
+				        {"Non-penalty xG"},
+				        {"Offsides"},
+				        {"Own goals"},
+				        {"Through balls"},
+				        {"Passes completed"},
+				        {"Progressive passes"},
+				        {"Passes into penalty area"},
+				        {"Progressive passes received"},
+				        {"Shot-creating actions"},
+				        {"Shots"},
+				        {"Shots on target"},
+				        {"Tackles (att 3rd)"},
+				        {"Successful take-ons"},
+				        {"Tackles"},
+				        {"Touches (att pen)"},
+				        {"Touches (def pen)"},
+				        {"xA"},
+				        {"xG"}
+				    }
+				)
+
+	annotation PBI_Id = 6c4036378b8f446caced3c6c1674938d
+

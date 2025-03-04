@@ -1,0 +1,111 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 44.053726923986574,
+            "y": 0
+          },
+          "nodeIndex": "ucl2425",
+          "nodeLineageTag": "10c9a068-5bcb-4c3d-99be-d1088b6fae30",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 288.05800091592613,
+            "y": 0
+          },
+          "nodeIndex": "fixturesucl2425",
+          "nodeLineageTag": "179b1e8b-5912-4e9c-a595-d1fe63fb8cf5",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 944.78815819702027,
+            "y": 0
+          },
+          "nodeIndex": "fieldtiltucl2425",
+          "nodeLineageTag": "99d18978-d024-4b77-9941-3459f8048620",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1041.5787554147532,
+            "y": 557.6278949106736
+          },
+          "nodeIndex": "MDs",
+          "nodeLineageTag": "863018ce-dc72-435a-bd8e-fe4e752341f1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 285.79297493898366,
+            "y": 674.30512202793284
+          },
+          "nodeIndex": "ucl2425_squad_or_vs",
+          "nodeLineageTag": "14bb0d11-6a56-40d0-a2db-f9c393f15e79",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 37.219181687886021,
+            "y": 385.7173353052757
+          },
+          "nodeIndex": "Medidas",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1288.3595737268672,
+            "y": 387.15256101396642
+          },
+          "nodeIndex": "Categories",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 7
+        }
+      ],
+      "name": "Todas as tabelas",
+      "zoomValue": 56.447393005377592,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas as tabelas",
+  "defaultDiagram": "Todas as tabelas"
+}

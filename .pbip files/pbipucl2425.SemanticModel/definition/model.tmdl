@@ -1,0 +1,28 @@
+model Model
+	culture: pt-BR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBIDesktopVersion = 2.140.1078.0 (25.02)+2cce24fb16e8b71ba835921d23e7ffc1fab909df
+
+annotation PBI_QueryOrder = ["ucl2425","fixturesucl2425","fieldtiltucl2425","MDs","ucl2425_vs","ucl2425_squad","ucl2425_squad_or_vs"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table ucl2425
+ref table fixturesucl2425
+ref table DateTableTemplate_fa2c86cd-444d-41b9-8ec9-365c6cd48762
+ref table LocalDateTable_d14e47e0-3666-4213-b0d8-e8ce072c8bff
+ref table Medidas
+ref table fieldtiltucl2425
+ref table MDs
+ref table ucl2425_squad_or_vs
+ref table Categories
+
+ref cultureInfo pt-BR
+
