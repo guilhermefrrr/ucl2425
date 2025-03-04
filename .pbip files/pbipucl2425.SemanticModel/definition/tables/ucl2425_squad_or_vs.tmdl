@@ -1055,5 +1055,5 @@ table ucl2425_squad_or_vs
 
 	annotation PBI_NavigationStepName = Navegação
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

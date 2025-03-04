@@ -87,11 +87,13 @@ table fieldtiltucl2425
 		mode: import
 		source =
 				let
-				    Fonte = Csv.Document(File.Contents("G:\Meu Drive\Dados\Projetos\UCL_2425\fieldtiltucl2425.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Fonte = Csv.Document(File.Contents("C:\Users\guilh\Documents\GitHub\ucl2425\Complete data\fieldtiltucl2425.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Match_ID", Int64.Type}, {"Squad", type text}, {"MD", Int64.Type}, {"Touches_Att 3rd", Int64.Type}, {"Total_Touches_Att 3rd", Int64.Type}, {"Field_Tilt%", type number}, {"Cum_Touches_Att 3rd", Int64.Type}, {"Cum_Total_Touches_Att 3rd", Int64.Type}, {"Field_Tilt_Over_Matches%", type number}})
 				in
 				    #"Tipo Alterado"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

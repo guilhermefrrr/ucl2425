@@ -145,7 +145,7 @@ table fixturesucl2425
 		mode: import
 		source =
 				let
-				    Fonte = Csv.Document(File.Contents("G:\Meu Drive\Dados\Projetos\UCL_2425\fixturesucl2425.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Fonte = Csv.Document(File.Contents("C:\Users\guilh\Documents\GitHub\ucl2425\Complete data\fixturesucl2425.csv"),[Delimiter=",", Columns=15, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Round", type text}, {"MD", Int64.Type}, {"Match_ID", Int64.Type}, {"Day", type text}, {"Date", type date}, {"Time", type time}, {"Home", type text}, {"xG_Home", type number}, {"Score_Home", Int64.Type}, {"Score_Away", Int64.Type}, {"xG_Away", type number}, {"Away", type text}, {"Attendance", Int64.Type}, {"Venue", type text}, {"Referee", type text}})
 				in
