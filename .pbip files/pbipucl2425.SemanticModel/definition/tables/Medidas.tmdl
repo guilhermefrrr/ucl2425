@@ -342,6 +342,16 @@ table Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure Crs/Passes_Att =
+			
+			DIVIDE(
+			    SUM(ucl2425[Crs]),
+			    SUM(ucl2425[Passes_Att])
+			) * 100
+		lineageTag: 83c440b7-de21-46c9-af5b-3aaa635b10b8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Column
 		formatString: 0
 		lineageTag: 3620a6c1-5a8c-43eb-8854-c673f9c798c7

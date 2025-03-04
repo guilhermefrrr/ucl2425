@@ -457,7 +457,9 @@ cultureInfo pt-BR
 			            "Weight": 0.491
 			          }
 			        },
-			        {},
+			        {
+			          "": {}
+			        },
 			        {
 			          "country": {
 			            "Type": "Noun",
@@ -8214,7 +8216,9 @@ cultureInfo pt-BR
 			            "Weight": 0.491
 			          }
 			        },
-			        {},
+			        {
+			          "": {}
+			        },
 			        {
 			          "country": {
 			            "Type": "Noun",
@@ -11611,6 +11615,16 @@ cultureInfo pt-BR
 			          }
 			        },
 			        {
+			          "Squad": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
 			          "Squad or vs Squad": {
 			            "State": "Suggested",
 			            "Source": {
@@ -11622,16 +11636,6 @@ cultureInfo pt-BR
 			        },
 			        {
 			          "Squad | vs Squad": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        },
-			        {
-			          "Squad": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -12271,6 +12275,27 @@ cultureInfo pt-BR
 			        {
 			          "cpa+ppa": {
 			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medidas.crs_passes_cmp": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medidas",
+			          "ConceptualProperty": "Crs/Passes_Att"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Crosses / Passes att. (%)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
