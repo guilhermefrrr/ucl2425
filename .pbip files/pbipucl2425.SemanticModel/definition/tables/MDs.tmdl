@@ -1,0 +1,29 @@
+table MDs
+	lineageTag: 863018ce-dc72-435a-bd8e-fe4e752341f1
+
+	column MD
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e8b7a80-bb46-4ae3-8304-e72058427243
+		summarizeBy: none
+		sourceColumn: MD
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MDs = m
+		mode: import
+		source =
+				let
+				    Fonte = ucl2425,
+				    MD = Fonte[MD],
+				    #"Duplicatas Removidas" = List.Distinct(MD),
+				    #"Convertido para Tabela" = Table.FromList(#"Duplicatas Removidas", Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Convertido para Tabela",{{"Column1", Int64.Type}}),
+				    #"Colunas Renomeadas" = Table.RenameColumns(#"Tipo Alterado",{{"Column1", "MD"}})
+				in
+				    #"Colunas Renomeadas"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
