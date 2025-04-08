@@ -3,10 +3,11 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: en-US
 	dataAccessOptions
+		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBIDesktopVersion = 2.140.1205.0 (25.02)+2ab3defe107764e1cf486b42122d9362df7f34ea
+annotation PBIDesktopVersion = 2.141.1253.0 (25.03)+74f9999a1e95f78c739f3ea2b96ba340e9ba8729
 
 annotation PBI_QueryOrder = ["ucl2425","fixturesucl2425","fieldtiltucl2425","MDs","ucl2425_vs","ucl2425_squad","ucl2425_squad_or_vs"]
 
